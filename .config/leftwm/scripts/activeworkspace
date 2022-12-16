@@ -1,0 +1,3 @@
+#!/bin/sh
+
+leftwm state -q -n | jq '.workspaces[] | select(.tags[] | .mine and .focused) | .index'

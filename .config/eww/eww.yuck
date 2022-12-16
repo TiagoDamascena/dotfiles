@@ -1,0 +1,33 @@
+(include "./widgets/bar.yuck")
+
+(defwindow bar0
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry 
+    :x "0%"
+    :y "10px"
+    :width "100%"
+    :height "40px"
+    :anchor "top center"
+  )
+  :reserve (struts :side "top" :distance "50px")
+  :windowtype "dock"
+  :stacking "fg"  
+  (bar :monitor 0)
+)
+
+(defwindow bar1
+  :monitor 1
+  :windowtype "dock"
+  :geometry (geometry
+    :x "0%"
+    :y "10px"
+    :width "100%"
+    :height "40px"
+    :anchor "top center"
+  )
+  :reserve (struts :side "top" :distance "50px")
+  :windowtype "dock"
+  :stacking "fg"
+  (bar :monitor 1)
+)

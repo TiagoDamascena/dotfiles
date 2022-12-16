@@ -1,0 +1,26 @@
+(defwidget workspaces [monitor]
+  (box
+    :class "workspaces"
+    :orientation "h"
+    :space-evenly true
+    :halign "start"
+    :spacing 5
+    (for tag in '${wmstate.workspaces[monitor].tags}'
+      (eventbox
+        :class "ws-button-container"
+        :cursor "pointer"
+        :onclick "leftwm-command \"SendWorkspaceToTag ${monitor} ${tag.index}\""
+        (box :class {tag.mine ? "ws-button ws-button-mine" :
+                    tag.visible ? "ws-button ws-button-visible" :
+                    tag.urgent ? "ws-button ws-button-urgent" :
+                    tag.busy ? "ws-button ws-button-busy" : "ws-button"}
+          (label :text {"${tag.name}"})
+        )
+      )
+    )
+  )
+)
+
+(deflisten wmstate :initial '{"workspaces":[{"layout":"","tags":[{"name":"","index":0,"mine":false,"busy":false,"visible":false,"urgent":false}]}, {"layout":"","tags":[{"name":"","index":0,"mine":false,"busy":false,"visible":false,"urgent":false}]}]}'
+  "scripts/bar/getworkspaces"
+)

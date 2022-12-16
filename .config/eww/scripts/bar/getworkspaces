@@ -1,0 +1,5 @@
+#!/bin/sh
+
+leftwm state | while read -r LINE; do
+  echo "$LINE"
+done
