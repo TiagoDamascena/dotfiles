@@ -1,8 +1,6 @@
 (include "widgets/bar/notification.yuck")
 (include "widgets/bar/media.yuck")
 (include "widgets/bar/volume.yuck")
-(include "widgets/bar/wifi.yuck")
-(include "widgets/bar/battery.yuck")
 (include "widgets/bar/power.yuck")
 
 (defwidget sidestuff []
@@ -24,8 +22,6 @@
     (notification)
     (media)
     (volume)
-    (wifi)
-    (battery)
     (power)
   )
 )

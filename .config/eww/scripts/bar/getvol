@@ -4,7 +4,7 @@ get_volume()
 {
   volume=$(pamixer --get-volume)
   mute=$(pamixer --get-mute)
-  sinks=$(pactl -f json list sinks | jq -c '[ .[] | {name: .name, description: .description} ]')
+  sinks=$(pactl -f json list sinks | jq -c '[ .[] | {name: .name, description: .properties."alsa.card_name"} ]')
   default=$(pactl get-default-sink)
   icon=""
 
@@ -26,7 +26,7 @@ get_volume()
 get_volume
 
 pactl subscribe | while read x event y type num; do
-  if [ "$event" == "'change'" ] && [ "$type" == "sink" ]; then
+  if [ "$event" == '“alterar”' ] && [ "$type" == "destino" ]; then
     get_volume
   fi
 done
