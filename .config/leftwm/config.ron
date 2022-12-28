@@ -45,9 +45,9 @@
     focus_new_windows: true,
     sloppy_mouse_follows_focus: true,
     keybind: [
-        (command: Execute, value: "rofi -show window", modifier: ["modkey"], key: "p"),
-        (command: Execute, value: "rofi -show run", modifier: ["modkey"], key: "r"),
-        (command: Execute, value: "rofi -show drun -show-icons", modifier: ["modkey"], key: "space"),
+        (command: Execute, value: "rofi -show window -theme ~/.config/rofi/theme/windows.rasi", modifier: ["modkey"], key: "p"),
+        (command: Execute, value: "rofi -show run -theme ~/.config/rofi/theme/runner.rasi", modifier: ["modkey"], key: "r"),
+        (command: Execute, value: "rofi -show drun -theme ~/.config/rofi/theme/launcher.rasi", modifier: ["modkey"], key: "space"),
         (command: Execute, value: "alacritty", modifier: ["modkey"], key: "Return"),
 	    (command: Execute, value: "nautilus", modifier: ["modkey"], key: "e"),
         (command: ToggleFloating, value: "", modifier: ["modkey"], key: "t"),
